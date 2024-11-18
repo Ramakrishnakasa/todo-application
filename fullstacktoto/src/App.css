@@ -1,0 +1,184 @@
+/* Center alignment and base styling */
+.App {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  font-family: Arial, sans-serif;
+  min-height: 100vh;
+  background-color: #e9ecef;
+  color: #333;
+}
+
+/* Title styling */
+h1 {
+  color: #5a67d8;
+  font-size: 2.5rem;
+  margin-top: 20px;
+}
+
+h2 {
+  font-size: 1.5rem;
+  color: #4a5568;
+  margin-top: 10px;
+}
+
+/* Form container */
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  margin: 20px;
+  width: 100%;
+  max-width: 400px;
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Input styling */
+#todotext {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  border: 1px solid #cbd5e0;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+/* Button styling */
+#submittodo {
+  margin-top: 15px;
+  width: 100px;
+  height: 35px;
+  border: none;
+  border-radius: 8px;
+  background-color: #5a67d8;
+  color: #fff;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#submittodo:hover {
+  background-color: #4c51bf;
+}
+
+/* List of todos */
+.show {
+  margin-top: 30px;
+  width: 100%;
+  max-width: 400px;
+}
+
+/* Styling the unordered list */
+.show ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+/* Each todo item in the list */
+.show li {
+  display: flex;
+  justify-content: space-between;  /* Push items to opposite ends */
+  align-items: center;  /* Vertically center the content */
+  padding: 10px;
+  background-color: #f7fafc;
+  margin-top: 10px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  font-size: 1rem;
+}
+
+
+
+/* Save Button */
+
+/* Style for the buttons inside each todo item */
+.todo-buttons {
+  display: flex;
+  justify-content: space-between;
+  width: 160px;
+}
+
+/* Edit button */
+.editButton, .deleteButton {
+  margin: 5px;
+  padding: 5px 10px;
+  cursor: pointer;
+  border-radius: 5px;
+  background-color: #f0f0f0;
+  border: 1px solid #ccc;
+}
+.editButton{
+  color: white;
+  background-color: #4c51bf;
+}
+.deleteButton{
+  background-color: rgb(214, 51, 51);
+
+}
+
+.editButton:hover, .deleteButton:hover {
+  background-color: #e0e0e0;
+}
+
+.saveButton {
+  padding: 5px 10px;
+  cursor: pointer;
+  border-radius: 5px;
+  background-color: #4caf50;
+  border: 1px solid #4caf50;
+  color: white;
+}
+
+.saveButton:hover {
+  background-color: #45a049;
+}
+.login-container {
+  text-align: center;
+  margin-top: 50px;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 300px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  background-color: #f9f9f9;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.login-form input {
+  width: 90%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.login-form button {
+  width: 100px;
+  padding: 10px;
+  margin-top: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #4caf50;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.login-form button:hover {
+  background-color: #45a049;
+}
+
+.error {
+  color: red;
+  margin-top: 10px;
+}

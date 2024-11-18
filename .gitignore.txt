@@ -1,0 +1,13 @@
+# Node.js
+node_modules
+.env
+
+# Spring Boot
+target
+.log
+.class
+
+# OS and IDE specific
+.DS_Store
+.idea
+.iml
