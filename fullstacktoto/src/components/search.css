@@ -1,0 +1,49 @@
+.search-bar {
+    margin: 20px 0;
+    text-align: center;
+  }
+  
+  .search-input {
+    width: 80%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .show ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .show li {
+    margin: 10px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .todo-buttons {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .editButton, .deleteButton {
+    padding: 5px 10px;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+  }
+  
+  .editButton {
+    background-color: #f0ad4e;
+    color: white;
+    border-radius: 4px;
+  }
+  
+  .deleteButton {
+    background-color: #d9534f;
+    color: white;
+    border-radius: 4px;
+  }
+  

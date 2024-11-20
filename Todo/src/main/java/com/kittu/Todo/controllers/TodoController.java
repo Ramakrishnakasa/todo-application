@@ -26,6 +26,10 @@ public class TodoController {
     public todolist createTodo(@RequestBody todolist todo) {
         return todoRepo.save(todo); // Saves the entity with the correct description
     }
+    @GetMapping("/search")
+    public List<todolist> searchTodos(@RequestParam("query") String query) {
+        return todoRepo.findByDescriptionContainingIgnoreCase(query);
+    }
 
     @DeleteMapping("/{id}")
     public void deleteTodo(@PathVariable Long id) {

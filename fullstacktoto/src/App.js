@@ -5,6 +5,7 @@ import Register from './components/Register';
 import MainApp from './components/MainApp';
 import './App.css';
 
+
 function App() {
   const isAuthenticated = localStorage.getItem('isAuthenticated') === 'true';
 
@@ -12,7 +13,7 @@ function App() {
     <Router>
       <Routes>
         {/* Default route - Redirect to login if not authenticated */}
-        <Route path="/" element={isAuthenticated ? <Navigate to="/todos" /> : <Navigate to="/login" />} />
+        <Route path="/" element = {<Login />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
         {/* Protect the Todos route */}
