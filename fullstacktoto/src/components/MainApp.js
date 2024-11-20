@@ -29,6 +29,25 @@ function App() {
       console.error("Error fetching todos:", error);
     }
   }
+  async function downloadTodosAsExcel() {
+    try {
+      const response = await axios.get('http://localhost:8080/api/todos/export', {
+        responseType: 'blob', // Ensures the file is downloaded as binary
+      });
+  
+      // Create a URL for the blob and trigger download
+      const url = window.URL.createObjectURL(new Blob([response.data]));
+      const link = document.createElement('a');
+      link.href = url;
+      link.setAttribute('download', 'todos.xlsx'); // Set file name
+      document.body.appendChild(link);
+      link.click();
+      link.remove();
+    } catch (error) {
+      console.error('Error downloading todos as Excel:', error);
+    }
+  }
+  
 
   async function submitForm(e) {
     e.preventDefault();
@@ -118,6 +137,8 @@ function App() {
         <span>Page {currentPage} of {totalPages}</span>
         <button onClick={handleNextPage} disabled={currentPage === totalPages}>Next</button>
       </div>
+      <button onClick={downloadTodosAsExcel}>Download as Excel</button>
+
     </div>
   );
 }
