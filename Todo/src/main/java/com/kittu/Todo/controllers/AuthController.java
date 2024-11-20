@@ -31,7 +31,7 @@ public class AuthController {
     }
 
     // Registration Endpoint
-    @PostMapping("/register")
+    @PostMapping("/Register")
     public ResponseEntity<?> register(@RequestBody Credentials credentials) {
         // Check if username already exists
 //        Credentials user = userRepository.findByUsername(username);
