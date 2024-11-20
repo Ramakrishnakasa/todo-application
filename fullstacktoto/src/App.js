@@ -1,25 +1,25 @@
-import React from 'react';
-import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
-import Login from './components/Login';
+import React, { useState } from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Login from './components/Login'; 
+import TodoApp from './components/MainApp'; // Your Todo application page
+import LogoutButton from './components/Logout';
 import Register from './components/Register';
-import MainApp from './components/MainApp';
-import './App.css';
-
+import './App.css'
 
 function App() {
-  const isAuthenticated = localStorage.getItem('isAuthenticated') === 'true';
+  const [auth, setAuth] = useState(false); // Managing authentication state
 
   return (
     <Router>
-      <Routes>
-        {/* Default route - Redirect to login if not authenticated */}
-        <Route path="/" element = {<Login />} />
-        <Route path="/login" element={<Login />} />
+      <div className="App">
+        {auth && <LogoutButton setAuth={setAuth} />}  {/* Show logout button only if authenticated */}
+        
+        <Routes>
         <Route path="/register" element={<Register />} />
-        {/* Protect the Todos route */}
-        <Route path="/todos" element={isAuthenticated ? <MainApp /> : <Navigate to="/login" />} />
-        <Route path = "*" element={<Navigate to="/login" />} />
-      </Routes>
+          <Route path="/login" element={<Login setAuth={setAuth} />} />
+          <Route path="/todos" element={auth ? <TodoApp /> : <Login setAuth={setAuth} />} />
+        </Routes>
+      </div>
     </Router>
   );
 }
