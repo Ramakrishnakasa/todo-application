@@ -12,7 +12,7 @@ function Register() {
     e.preventDefault();
 
     try {
-      const response = await axios.post('http://localhost:8080/api/auth/register', credentials);
+      const response = await axios.post('http://localhost:8080/api/auth/Register', credentials);
       if (response.status === 200) {
         alert('Registration successful. Please login.');
         navigate('/login');

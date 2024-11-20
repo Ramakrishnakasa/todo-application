@@ -3,24 +3,27 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   text-align: center;
-  font-family: Arial, sans-serif;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   min-height: 100vh;
-  background-color: #e9ecef;
-  color: #333;
+  background-color: #f4f7fc;
+  color: #444;
+  padding: 20px;
 }
 
 /* Title styling */
 h1 {
-  color: #5a67d8;
-  font-size: 2.5rem;
-  margin-top: 20px;
+  color: #4a90e2;
+  font-size: 2.8rem;
+  margin-bottom: 20px;
 }
 
 h2 {
-  font-size: 1.5rem;
-  color: #4a5568;
+  font-size: 1.8rem;
+  color: #6c757d;
   margin-top: 10px;
+  font-weight: normal;
 }
 
 /* Form container */
@@ -28,114 +31,148 @@ h2 {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 20px;
+  padding: 30px;
   margin: 20px;
   width: 100%;
-  max-width: 400px;
+  max-width: 450px;
   background-color: #fff;
   border-radius: 12px;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease-in-out;
+}
+
+.form:hover {
+  transform: translateY(-5px);
+}
+
+h2 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: #5c6368;
 }
 
 /* Input styling */
 #todotext {
   width: 100%;
-  padding: 10px;
-  margin-top: 10px;
-  border: 1px solid #cbd5e0;
+  padding: 12px 15px;
+  margin-top: 15px;
+  border: 1px solid #ddd;
   border-radius: 8px;
   font-size: 1rem;
+  background-color: #f8f9fa;
+  color: #444;
+  box-sizing: border-box;
+}
+
+#todotext:focus {
+  border-color: #4a90e2;
+  outline: none;
 }
 
 /* Button styling */
 #submittodo {
   margin-top: 15px;
-  width: 100px;
-  height: 35px;
+  width: 100%;
+  height: 45px;
   border: none;
   border-radius: 8px;
-  background-color: #5a67d8;
+  background-color: #4a90e2;
   color: #fff;
-  font-size: 1rem;
+  font-size: 1.1rem;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease, transform 0.2s;
 }
 
 #submittodo:hover {
-  background-color: #4c51bf;
+  background-color: #357ab7;
+  transform: translateY(-3px);
+}
+
+#submittodo:active {
+  background-color: #2980b9;
 }
 
 /* List of todos */
 .show {
   margin-top: 30px;
   width: 100%;
-  max-width: 400px;
+  max-width: 500px;
 }
 
-/* Styling the unordered list */
 .show ul {
-  list-style-type: none;
+  list-style: none;
   padding: 0;
 }
 
-/* Each todo item in the list */
 .show li {
   display: flex;
-  justify-content: space-between;  /* Push items to opposite ends */
-  align-items: center;  /* Vertically center the content */
-  padding: 10px;
-  background-color: #f7fafc;
-  margin-top: 10px;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  background-color: #f8f9fa;
+  margin-top: 15px;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   font-size: 1rem;
+  transition: all 0.3s ease-in-out;
 }
 
+.show li:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
 
-
-/* Save Button */
-
-/* Style for the buttons inside each todo item */
 .todo-buttons {
   display: flex;
-  justify-content: space-between;
-  width: 160px;
+  gap: 12px;
 }
 
-/* Edit button */
-.editButton, .deleteButton {
-  margin: 5px;
-  padding: 5px 10px;
+.editButton,
+.deleteButton {
+  padding: 6px 12px;
+  font-size: 14px;
+  border: none;
+  border-radius: 4px;
   cursor: pointer;
-  border-radius: 5px;
-  background-color: #f0f0f0;
-  border: 1px solid #ccc;
+  transition: background-color 0.3s, transform 0.2s;
 }
-.editButton{
+
+.editButton {
+  background-color: #ffa500;
   color: white;
-  background-color: #4c51bf;
-}
-.deleteButton{
-  background-color: rgb(214, 51, 51);
-
 }
 
-.editButton:hover, .deleteButton:hover {
-  background-color: #e0e0e0;
+.deleteButton {
+  background-color: #f44336;
+  color: white;
+}
+
+.editButton:hover {
+  background-color: #ff9800;
+  transform: scale(1.05);
+}
+
+.deleteButton:hover {
+  background-color: #e53935;
+  transform: scale(1.05);
 }
 
 .saveButton {
-  padding: 5px 10px;
+  padding: 6px 12px;
   cursor: pointer;
-  border-radius: 5px;
+  border-radius: 4px;
   background-color: #4caf50;
-  border: 1px solid #4caf50;
+  border: none;
   color: white;
+  transition: background-color 0.3s, transform 0.2s;
 }
 
 .saveButton:hover {
   background-color: #45a049;
+  transform: scale(1.05);
 }
+
+/* Login page */
 .login-container {
   text-align: center;
   margin-top: 50px;
@@ -145,43 +182,49 @@ h2 {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 300px;
+  width: 350px;
   margin: 0 auto;
-  padding: 20px;
-  border: 1px solid #ccc;
+  padding: 25px;
+  border: 1px solid #ddd;
   border-radius: 10px;
-  background-color: #f9f9f9;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
 
 .login-form input {
   width: 90%;
-  padding: 10px;
+  padding: 12px 15px;
   margin: 10px 0;
   border: 1px solid #ccc;
   border-radius: 5px;
+  font-size: 1rem;
 }
 
 .login-form button {
-  width: 100px;
-  padding: 10px;
+  width: 100%;
+  padding: 12px;
   margin-top: 10px;
   border: none;
   border-radius: 5px;
   background-color: #4caf50;
   color: white;
-  font-size: 16px;
+  font-size: 1.1rem;
   cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
 }
 
 .login-form button:hover {
   background-color: #45a049;
+  transform: scale(1.05);
 }
 
 .error {
-  color: red;
+  color: #ff4747;
   margin-top: 10px;
+  font-size: 0.9rem;
 }
+
+/* Search bar styling */
 .search-bar {
   margin: 20px 0;
   text-align: center;
@@ -189,64 +232,37 @@ h2 {
 
 .search-input {
   width: 80%;
-  padding: 10px;
-  font-size: 16px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
+  padding: 12px 15px;
+  font-size: 1.1rem;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  background-color: #f8f9fa;
+  color: #444;
 }
 
-.show ul {
-  list-style: none;
-  padding: 0;
+.search-input:focus {
+  border-color: #4a90e2;
+  outline: none;
 }
 
-.show li {
-  margin: 10px 0;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.todo-buttons {
-  display: flex;
-  gap: 10px;
-}
-
-.editButton, .deleteButton {
-  padding: 5px 10px;
-  border: none;
-  cursor: pointer;
-  font-size: 14px;
-}
-
-.editButton {
-  background-color: #f0ad4e;
-  color: white;
-  border-radius: 4px;
-}
-
-.deleteButton {
-  background-color: #d9534f;
-  color: white;
-  border-radius: 4px;
-}
-
+/* Pagination */
 .pagination {
   margin: 20px 0;
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 10px;
+  gap: 15px;
 }
 
 .pagination button {
-  padding: 10px 20px;
-  font-size: 14px;
+  padding: 12px 20px;
+  font-size: 1rem;
   cursor: pointer;
   background-color: #007bff;
   color: white;
   border: none;
   border-radius: 4px;
+  transition: background-color 0.3s, transform 0.2s;
 }
 
 .pagination button:disabled {
@@ -254,24 +270,30 @@ h2 {
   cursor: not-allowed;
 }
 
-.pagination span {
-  font-size: 16px;
+.pagination button:hover {
+  background-color: #0056b3;
+  transform: scale(1.05);
 }
 
+.pagination span {
+  font-size: 1.1rem;
+}
 
 /* Logout button styles */
 .logout-btn {
   background-color: #ff4b5c;
   color: white;
-  margin-left: 1100px;
   border: none;
-  padding: 10px 20px;
+  padding: 12px 20px;
   border-radius: 5px;
   cursor: pointer;
-  font-size: 16px;
-  transition: background-color 0.3s ease;
+  font-size: 1.1rem;
+  transition: background-color 0.3s, transform 0.2s;
+  margin-left: auto;
+  margin-right: 20px;
 }
 
 .logout-btn:hover {
   background-color: #e0444e;
+  transform: scale(1.05);
 }
